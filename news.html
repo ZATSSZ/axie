@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background-image: url('./images/axie-infinity-wallpaper.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .navbar {
+            background-color: #009999;
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        .navbar a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #007777;
+            color: white;
+        }
+
+        .navbar a.active {
+            background-color: #007777;
+            color: white;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            margin-bottom: 60px; /* Space for footer */
+            color: white; /* Make text visible on background */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Make text readable on background */
+        }
+
+        /* Add a semi-transparent overlay to make content more readable */
+        .content-overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin: 20px 0;
+        }
+
+        footer {
+            background-color: #009999;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="news.html" class="active">News</a>
+    </div>
+
+    <main class="content">
+        <div class="content-overlay">
+            <h1>Latest News</h1>
+            <p>Patch note axie is in here page. Axie infinity patch note 1.0</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
