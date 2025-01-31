@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Axie</title>
     <style>
         * {
             margin: 0;
@@ -23,33 +23,71 @@
         }
 
         .navbar {
-            background-color: #FF8C00;
+            background-color: #C15627;
             overflow: hidden;
             position: sticky;
             top: 0;
             width: 100%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
             z-index: 1000;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            height: 50px;
+            border-bottom: 2px solid rgba(0,0,0,0.1);
         }
 
         .navbar a {
             float: left;
             color: white;
             text-align: center;
-            padding: 14px 16px;
+            padding: 14px 20px;
             text-decoration: none;
-            font-size: 17px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             transition: 0.3s;
+            position: relative;
         }
 
         .navbar a:hover {
-            background-color: #FF6B00;
-            color: white;
+            background-color: rgba(255,255,255,0.1);
+            color: #FFD700;
         }
 
         .navbar a.active {
-            background-color: #FF6B00;
-            color: white;
+            color: #FFD700;
+        }
+
+        .navbar a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #FFD700;
+            transition: width 0.3s;
+        }
+
+        .navbar a:hover:after,
+        .navbar a.active:after {
+            width: 80%;
+        }
+
+        .play-button {
+            margin-left: auto;
+            background-color: #8B4513;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .play-button:hover {
+            background-color: #A0522D !important;
         }
 
         header {
@@ -98,6 +136,7 @@
             height: 180px;
             z-index: 99;
             pointer-events: none;
+            overflow: hidden;
         }
 
         .cards-decoration::before {
@@ -108,11 +147,12 @@
             right: 0;
             height: 180px;
             background-image: url('./images/cards.jpg');
-            background-size: cover;
+            background-size: contain;
             background-position: center bottom;
             background-repeat: repeat-x;
             opacity: 0.9;
             animation: cardFloat 6s ease-in-out infinite;
+            transform-origin: bottom;
         }
 
         .cards-decoration::after {
@@ -138,7 +178,7 @@
         }
 
         footer {
-            background-color: #FF8C00;
+            background-color: #C15627;
             color: white;
             text-align: center;
             padding: 20px;
@@ -173,17 +213,17 @@
         <a href="login.html">Log In</a>
         <a href="news.html">News</a>
         <a href="images.html">Images</a>
+    
     </div>
 
     <header>
-        <h1>Welcome to My Website</h1>
+        <h1>Axie</h1>
     </header>
 
     <main class="content">
         <div class="content-container">
-            <h2>Welcome to the Home Page</h2>
-            <p>This is the main content of your home page. Navigate through the site using the menu above.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h2>Welcome</h2>
+            <p>This will be the main page of website consider it marketplace bitbyte etc.</p>
         </div>
     </main>
 

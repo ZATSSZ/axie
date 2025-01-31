@@ -52,10 +52,17 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
 
         .image-container:hover {
             transform: scale(1.03);
+        }
+
+        .image-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .image-container img {
@@ -63,6 +70,11 @@
             height: 300px;
             object-fit: cover;
             display: block;
+            transition: filter 0.3s ease;
+        }
+
+        .image-container:hover img {
+            filter: brightness(1.1);
         }
 
         .image-caption {
@@ -70,7 +82,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(0, 153, 153, 0.8);
+            background: rgba(193, 86, 39, 0.8);
             color: white;
             padding: 10px;
             text-align: center;
@@ -108,20 +120,35 @@
     <main class="content">
         <h1>Image Gallery</h1>
         <div class="image-gallery">
-            <div class="image-container">
-                <img src="./images/aqua.jpg" alt="Nature Image">
-                <div class="image-caption">Aquatic</div>
-            </div>
-            
-            <div class="image-container">
-                <img src="./images/bird.jpg" alt="City Image">
-                <div class="image-caption">Bird</div>
-            </div>
-            
-            <div class="image-container">
-                <img src="./images/plant.jpg" alt="Technology Image">
-                <div class="image-caption">Plant</div>
-            </div>
+            <a href="https://app.axieinfinity.com/marketplace/axies/?auctionTypes=Sale&classes=Aquatic" 
+               class="image-link" 
+               target="_blank" 
+               rel="noopener noreferrer">
+                <div class="image-container">
+                    <img src="./images/aqua.jpg" alt="Aquatic">
+                    <div class="image-caption">Aquatic Axies Marketplace</div>
+                </div>
+            </a>
+
+            <a href="https://app.axieinfinity.com/marketplace/axies/?auctionTypes=Sale&classes=Bird" 
+               class="image-link" 
+               target="_blank" 
+               rel="noopener noreferrer">
+                <div class="image-container">
+                    <img src="./images/bird.jpg" alt="Bird">
+                    <div class="image-caption">Bird</div>
+                </div>
+            </a>
+
+            <a href="https://app.axieinfinity.com/marketplace/axies/?auctionTypes=Sale&classes=Bird&classes=Plant" 
+               class="image-link" 
+               target="_blank" 
+               rel="noopener noreferrer">
+                <div class="image-container">
+                    <img src="./images/plant.jpg" alt="Plant">
+                    <div class="image-caption">Plant</div>
+                </div>
+            </a>
         </div>
     </main>
 
