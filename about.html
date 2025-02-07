@@ -13,19 +13,19 @@
 
         body {
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
             background-image: url('./images/bg2.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            padding-top: 50px; /* Height of the navbar */
+            padding-bottom: 60px; /* Height of the footer */
         }
 
         .navbar {
             background-color: #800000;
             overflow: hidden;
-            position: sticky;
+            position: fixed;
             top: 0;
             width: 100%;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -44,18 +44,14 @@
 
         .navbar a:hover {
             background-color: #600000;
-            color: white;
         }
 
         .navbar a.active {
             background-color: #600000;
-            color: white;
         }
 
         .content {
-            flex: 1;
             padding: 20px;
-            margin-bottom: 60px;
         }
 
         .papers-container {
@@ -91,24 +87,6 @@
             z-index: 1;
         }
 
-        .paper::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 30px;
-            background: linear-gradient(to right, 
-                transparent 0%,
-                transparent 49%,
-                #ddd 49.5%,
-                #ddd 50.5%,
-                transparent 51%,
-                transparent 100%
-            );
-            opacity: 0.1;
-        }
-
         .paper h2 {
             color: #800000;
             margin-bottom: 20px;
@@ -121,9 +99,44 @@
         .paper p {
             color: #333;
             line-height: 1.6;
-            font-size: 1em;
-            margin-bottom: 15px;
             text-align: justify;
+        }
+
+        .moderators {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin-top: 40px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .moderators h3 {
+            color: #800000;
+            font-size: 1.5em;
+        }
+
+        .moderators h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .moderator {
+            margin-bottom: 40px;
+        }
+
+        .moderator img {
+            max-width: 300px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .moderator p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #333;
+            font-size: 1em;
+            line-height: 1.6;
         }
 
         footer {
@@ -135,23 +148,6 @@
             position: fixed;
             bottom: 0;
             left: 0;
-            z-index: 100;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        @media (max-width: 1000px) {
-            .papers-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .paper {
-                width: 90%;
-                max-width: 400px;
-            }
         }
     </style>
 </head>
@@ -171,12 +167,31 @@
             <div class="paper">
                 <h2>Our Mission</h2>
                 <p>We're here to create an ecosystem of amazing Axie gaming experiences with community and player-owned economies as foundational pillars. By doing this we will deliver property rights to all users of the internet, starting with gamers.</p>
-                
             </div>
 
             <div class="paper">
                 <h2>Our Vision</h2>
-                <p>More money more game more fun</p>
+                <p>More money, more games, more fun.</p>
+            </div>
+        </div>
+
+        <div class="moderators">
+            <h3>Moderators</h3>
+
+            <div class="moderator">
+                <h1>Zachi Tolentino</h1>
+                <a href="https://www.facebook.com/zakiaaron.tolentino.7" target="_blank" rel="noopener noreferrer">
+                    <img src="https://scontent.fmnl13-4.fna.fbcdn.net/v/t39.30808-6/456330156_3400064063470986_2531210112827866284_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=4diUMwILxNYQ7kNvgF29hRL&_nc_oc=AdiG0-9Uk6D1Txq1moL1Qglh45Y1r0g4yXcG2ZhBxUyCdDE9IhgmANp4vPl9AoEfFsE&_nc_zt=23&_nc_ht=scontent.fmnl13-4.fna&_nc_gid=AyWNDrOsFCa76mablFYDbbV&oh=00_AYAI_JqnSnXSTKarHdSzrVGYmy3UPpP-W-rMOfMozaoNCg&oe=67ABEE24" alt="Zachi Tolentino">
+                </a>
+                <p>Zachi Tolentino is a dedicated moderator for our community. With his extensive knowledge of Axie Infinity and blockchain gaming, Zachi ensures a positive and engaging environment for all members.</p>
+            </div>
+
+            <div class="moderator">
+                <h1>Aaron</h1>
+                <a href="https://www.instagram.com/aaaarroonnnn_/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://scontent.fmnl13-2.fna.fbcdn.net/v/t39.30808-6/440362198_3305787809565279_4643549315012911737_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=SOo5iX_Be0oQ7kNvgHQYjiA&_nc_oc=Adj-_FRqaJlPzTp1SvNEHpQ7ITH0YeGmp7weextSyWqCjOs7ExIi1-XUglIGiycMMp4&_nc_zt=23&_nc_ht=scontent.fmnl13-2.fna&_nc_gid=A-L-1yCbYiIqnqAvk41vmeW&oh=00_AYBhAKSfRiu2xA_o2PZ-wV0ZMJ0qvwgQEF2B5PhFWOeetw&oe=67ABF5CA" alt="Aaron">
+                </a>
+                <p>Aaron is an active moderator in our community, ensuring a fair and fun environment for all players. His deep understanding of Axie Infinity and community-building skills make him an essential part of the team.</p>
             </div>
         </div>
     </main>
