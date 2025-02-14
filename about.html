@@ -6,6 +6,9 @@
     <title>About Us</title>
     <style>
         * {
+    cursor: url('./images/bird cursor.png'), auto;
+}
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -149,9 +152,33 @@
             bottom: 0;
             left: 0;
         }
+        * {
+            cursor: none; /* Hide the default cursor */
+        }
+
+        .custom-cursor {
+            width: 100px;
+            height: 100px;
+            background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bird%20cursor-yvI7wSdpG5uB604eN1w5zrMa7hqohb.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            transform-origin: center center;
+        }
+
+        /* Add hover effect for interactive elements */
+        a:hover ~ .custom-cursor,
+        button:hover ~ .custom-cursor {
+            transform: scale(1.2);
+        }
     </style>
 </head>
+
 <body>
+    <div class="custom-cursor"></div>
     <div class="navbar">
         <a href="index.html">Home</a>
         <a href="about.html" class="active">About Us</a>
@@ -181,7 +208,7 @@
             <div class="moderator">
                 <h1>Zachi Tolentino</h1>
                 <a href="https://www.facebook.com/zakiaaron.tolentino.7" target="_blank" rel="noopener noreferrer">
-                    <img src="https://scontent.fmnl13-4.fna.fbcdn.net/v/t39.30808-6/456330156_3400064063470986_2531210112827866284_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=4diUMwILxNYQ7kNvgF29hRL&_nc_oc=AdiG0-9Uk6D1Txq1moL1Qglh45Y1r0g4yXcG2ZhBxUyCdDE9IhgmANp4vPl9AoEfFsE&_nc_zt=23&_nc_ht=scontent.fmnl13-4.fna&_nc_gid=AyWNDrOsFCa76mablFYDbbV&oh=00_AYAI_JqnSnXSTKarHdSzrVGYmy3UPpP-W-rMOfMozaoNCg&oe=67ABEE24" alt="Zachi Tolentino">
+                    <img src="https://scontent.fmnl13-4.fna.fbcdn.net/v/t39.30808-6/456330156_3400064063470986_2531210112827866284_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=SjFLLN63ztUQ7kNvgFmOHlY&_nc_oc=AdhgawjsUZlJNZ8jw0ryfMjbU2I1hMFoB6bVYEi3aOm_12Eg_RqcoKYxKUkhrgP-mag&_nc_zt=23&_nc_ht=scontent.fmnl13-4.fna&_nc_gid=AxrGS2RBxvfVA6AYiZh_ANR&oh=00_AYA7QIGBSbYiMdtmWvTUixTajlrfsME8Y9pNrrR71EBlVg&oe=67B39EE4" alt="Zachi Tolentino">
                 </a>
                 <p>Zachi Tolentino is a dedicated moderator for our community. With his extensive knowledge of Axie Infinity and blockchain gaming, Zachi ensures a positive and engaging environment for all members.</p>
             </div>
@@ -189,7 +216,7 @@
             <div class="moderator">
                 <h1>Aaron</h1>
                 <a href="https://www.instagram.com/aaaarroonnnn_/" target="_blank" rel="noopener noreferrer">
-                    <img src="https://scontent.fmnl13-2.fna.fbcdn.net/v/t39.30808-6/440362198_3305787809565279_4643549315012911737_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=SOo5iX_Be0oQ7kNvgHQYjiA&_nc_oc=Adj-_FRqaJlPzTp1SvNEHpQ7ITH0YeGmp7weextSyWqCjOs7ExIi1-XUglIGiycMMp4&_nc_zt=23&_nc_ht=scontent.fmnl13-2.fna&_nc_gid=A-L-1yCbYiIqnqAvk41vmeW&oh=00_AYBhAKSfRiu2xA_o2PZ-wV0ZMJ0qvwgQEF2B5PhFWOeetw&oe=67ABF5CA" alt="Aaron">
+                    <img src="https://scontent.fmnl13-2.fna.fbcdn.net/v/t39.30808-6/440362198_3305787809565279_4643549315012911737_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=j2Kr7m8YGicQ7kNvgFYp79w&_nc_oc=Adjmdl-yguJvypiLDGPVNr2jBxwt9RAJGmtmSTvr8nZLMUtzZwxkeq_7bX-eeMS2rRU&_nc_zt=23&_nc_ht=scontent.fmnl13-2.fna&_nc_gid=A1utWYPzGsei2wK1rVImVPc&oh=00_AYARnF1yK7HMr_2z1vL-7_7yqMyWPl2ctHsWJllnW8LEWw&oe=67B3A68A" alt="Aaron">
                 </a>
                 <p>Aaron is an active moderator in our community, ensuring a fair and fun environment for all players. His deep understanding of Axie Infinity and community-building skills make him an essential part of the team.</p>
             </div>
@@ -199,5 +226,34 @@
     <footer>
         <p>&copy; 2024 My Website. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.querySelector('.custom-cursor');
+            
+            document.addEventListener('mousemove', (e) => {
+                // Update cursor position with smooth animation
+                cursor.style.left = e.clientX - 16 + 'px';
+                cursor.style.top = e.clientY - 16 + 'px';
+            });
+
+            // Add subtle floating animation
+            let floatY = 0;
+            let floatDirection = 1;
+
+            function animateCursor() {
+                floatY += 0.2 * floatDirection;
+                
+                if (floatY > 3) floatDirection = -1;
+                if (floatY < -3) floatDirection = 1;
+                
+                cursor.style.transform = `translateY(${floatY}px)`;
+                requestAnimationFrame(animateCursor);
+            }
+
+            animateCursor();
+        });
+    </script>
+    
 </body>
 </html>

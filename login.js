@@ -108,3 +108,29 @@ document.addEventListener('DOMContentLoaded', function() {
     
     document.getElementById('loginForm').addEventListener('submit', validateLogin);
 }); 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const cursor = document.querySelector('.custom-cursor');
+    
+    document.addEventListener('mousemove', (e) => {
+        
+        cursor.style.left = e.clientX - 16 + 'px';
+        cursor.style.top = e.clientY - 16 + 'px';
+    });
+
+  
+    let floatY = 0;
+    let floatDirection = 1;
+
+    function animateCursor() {
+        floatY += 0.2 * floatDirection;
+        
+        if (floatY > 3) floatDirection = -1;
+        if (floatY < -3) floatDirection = 1;
+        
+        cursor.style.transform = `translateY(${floatY}px)`;
+        requestAnimationFrame(animateCursor);
+    }
+
+    animateCursor();
+});
