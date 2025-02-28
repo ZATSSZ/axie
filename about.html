@@ -153,7 +153,7 @@
             left: 0;
         }
         * {
-            cursor: none; /* Hide the default cursor */
+            cursor: none; 
         }
 
         .custom-cursor {
@@ -169,7 +169,7 @@
             transform-origin: center center;
         }
 
-        /* Add hover effect for interactive elements */
+        
         a:hover ~ .custom-cursor,
         button:hover ~ .custom-cursor {
             transform: scale(1.2);
@@ -232,12 +232,12 @@
             const cursor = document.querySelector('.custom-cursor');
             
             document.addEventListener('mousemove', (e) => {
-                // Update cursor position with smooth animation
+                
                 cursor.style.left = e.clientX - 16 + 'px';
                 cursor.style.top = e.clientY - 16 + 'px';
             });
 
-            // Add subtle floating animation
+            
             let floatY = 0;
             let floatDirection = 1;
 

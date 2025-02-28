@@ -1,0 +1,143 @@
+body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: url('./images/mainpage.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        .navbar {
+            background-color: #C15627;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            border-bottom: 2px solid rgba(0,0,0,0.1);
+        }
+        
+        .navbar-nav .nav-link {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            padding: 0.5rem 1rem;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: #FFD700;
+        }
+        
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #FFD700;
+            transition: width 0.3s;
+        }
+        
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 80%;
+        }
+        
+        .play-button {
+            background-color: #8B4513;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .play-button:hover {
+            background-color: #A0522D;
+            color: white;
+        }
+        
+        header h1 {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .content-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .content h2 {
+            color: #FF8C00;
+        }
+        
+        .cards-decoration {
+            position: fixed;
+            bottom: 60px;
+            left: 0;
+            width: 100%;
+            height: 180px;
+            z-index: 99;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .cards-decoration::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 180px;
+            background-image: url('./images/cards.jpg');
+            background-size: contain;
+            background-position: center bottom;
+            background-repeat: repeat-x;
+            opacity: 0.9;
+            animation: cardFloat 6s ease-in-out infinite;
+            transform-origin: bottom;
+        }
+        
+        .cards-decoration::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.2));
+        }
+        
+        @keyframes cardFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .custom-cursor {
+            width: 100px;
+            height: 100px;
+            background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bird%20cursor-yvI7wSdpG5uB604eN1w5zrMa7hqohb.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            transform-origin: center center;
+        }
+        
+        a:hover ~ .custom-cursor,
+        button:hover ~ .custom-cursor {
+            transform: scale(1.2);
+        }
+        
+        * { cursor: none; }
+        
+        @media (max-width: 768px) {
+            .cards-decoration, .cards-decoration::before { height: 120px; }
+            .content { margin-bottom: 180px; }
+        }
+
+        
